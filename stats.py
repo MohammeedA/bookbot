@@ -12,3 +12,14 @@ def get_num_char(words):
             else:
                 characters[char] += 1
     return characters
+
+def sort_on(dict):
+    return dict["count"]
+
+def get_sorted_list(char_dict):
+    sorted_list = []
+    for char in char_dict:
+        print(char)
+        sorted_list.append({"char": char, "count": char_dict[char]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
