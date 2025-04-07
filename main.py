@@ -3,7 +3,8 @@ import sys
 
 def get_path_to_book():
     if len(sys.argv) != 2:
-        raise Exception("Usage python3 main.py <path_to_book>")
+        print(len(sys.argv))
+        raise Exception("Usage: python3 main.py <path_to_book>")
     return sys.argv[1]
 
 def get_book_text(path_to_file):
@@ -16,6 +17,7 @@ def main():
         path_to_book = get_path_to_book()
     except Exception as e:
         print(e)
+        sys.exit(1)
     
     words = get_book_text(path_to_book)
     num_words = get_num_words(words)
